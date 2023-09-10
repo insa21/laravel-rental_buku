@@ -7,7 +7,9 @@ use Illuminate\Routing\Controller;
 
 class BookController extends Controller
 {
-    public function index() {
-        dd('ini halaman buku');
+    public function index()
+    {
+        // dd('ini halaman buku');
+        return view('book');
     }
 }

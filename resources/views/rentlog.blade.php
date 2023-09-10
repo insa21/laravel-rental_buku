@@ -1,7 +1,7 @@
 @extends('layouts.mainlayout')
 
-@section('title', 'Profile')
+@section('title', 'Dashboard')
 
 @section('content')
-    <h1>ini halaman profile</h1>
+    <h1>Ini halaman rent-log</h1>
 @endsection

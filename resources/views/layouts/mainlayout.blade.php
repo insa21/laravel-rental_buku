@@ -59,8 +59,8 @@
                     <a href="books">Books</a>
                     <a href="categories">Categories</a>
                     <a href="users">Users</a>
-                    <a href="rentlog">Rent log</a>
-                    <a href="profile">Profile</a>
+                    <a href="rent-logs">Rent log</a>
+                    {{-- <a href="profile">Profile</a> --}}
                     <a href="logout">Logout</a>
                 @else
                     <a href="profile">Profile</a>

@@ -11,4 +11,9 @@ class UserController extends Controller
         // dd('Ini halaman profile');
         return view('profile');
     }
+
+    public function index()
+    {
+        return view('users');
+    }
 }
