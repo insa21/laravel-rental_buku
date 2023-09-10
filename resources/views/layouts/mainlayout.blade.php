@@ -35,6 +35,11 @@
         .sidebar a:hover {
             background-color: skyblue;
         }
+
+        .active {
+            background: skyblue;
+            border-right: solid 8px orange;
+        }
     </style>
 </head>
 
@@ -55,16 +60,16 @@
                 <!-- Content for sidebar -->
                 @if (Auth::user()->role_id == 1)
                     {{-- Admin --}}
-                    <a href="dashboard">Dashboard</a>
-                    <a href="books">Books</a>
-                    <a href="categories">Categories</a>
-                    <a href="users">Users</a>
-                    <a href="rent-logs">Rent log</a>
+                    <a href="dashboard" @if (request()->route()->uri == 'dashboard') class='active' @endif>Dashboard</a>
+                    <a href="books" @if (request()->route()->uri == 'books') class='active' @endif>Books</a>
+                    <a href="categories" @if (request()->route()->uri == 'categories') class='active' @endif>Categories</a>
+                    <a href="users" @if (request()->route()->uri == 'users') class='active' @endif>Users</a>
+                    <a href="rent-logs" @if (request()->route()->uri == 'rent-logs') class='active' @endif>Rent log</a>
                     {{-- <a href="profile">Profile</a> --}}
-                    <a href="logout">Logout</a>
+                    <a href="logout" @if (request()->route()->uri == 'logout') class='active' @endif>Logout</a>
                 @else
-                    <a href="profile">Profile</a>
-                    <a href="logout">Logout</a>
+                    <a href="profile" @if (request()->route()->uri == 'profile') class='active' @endif>Profile</a>
+                    <a href="logout" @if (request()->route()->uri == 'logout') class='active' @endif>Logout</a>
                 @endif
             </div>
             <div class="content p-5 col-lg-10">
