@@ -14,8 +14,7 @@
     </div>
 
     <div class="mt-5 d-flex justify-content-end">
-        <a href="category-deleted-list" class="btn btn-secondary me-3"> View Deleted Data</a>
-        <a href="category-add" class="btn btn-primary"> Add Data</a>
+        <a href="categories" class="btn btn-primary"> Back</a>
     </div>
     <div class="my-5">
         <table class="table">
@@ -27,13 +26,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($categories as $item)
+                @foreach ($deletedCategory as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
                         <td>
-                            <a href="/category-edit/{{ $item->slug }}">Edit</a>
-                            <a href="/category-delete/{{ $item->slug }}">Delete</a>
+                            <a href="/category-restore/{{ $item->slug }}">Restore</a>
                         </td>
                     </tr>
                 @endforeach
