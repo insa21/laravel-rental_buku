@@ -1,9 +1,9 @@
 @extends('layouts.mainlayout')
 
-@section('title', 'Book')
+@section('title', 'Dashboard')
 
 @section('content')
-    <h1>Books List</h1>
+    <h1>User List</h1>
 
     <div>
         @if (session('status'))
@@ -22,22 +22,24 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Code</th>
-                    <th>Title</th>
+                    <th>Username</th>
+                    <th>phone</th>
+                    <th>address</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($books as $item)
+                @foreach ($users as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->book_code }}</td>
-                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->username }}</td>
+                        <td>{{ $item->phone }}</td>
+                        <td>{{ $item->address }}</td>
                         <td>{{ $item->status }}</td>
                         <td>
-                            <a href="/book-edit/{{ $item->slug }}">Edit</a>
-                            <a href="/book-delete/{{ $item->slug }}">Delete</a>
+                            <a href="/user-edit/{{ $item->slug }}">Edit</a>
+                            <a href="/user-delete/{{ $item->slug }}">Delete</a>
                         </td>
                     </tr>
                 @endforeach

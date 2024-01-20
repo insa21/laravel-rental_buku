@@ -40,9 +40,13 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
 
+    // *Books
     Route::get('books', [BookController::class, 'index']);
+    Route::get('book-add', [BookController::class, 'add']);
+    Route::post('book-add', [BookController::class, 'store']);
+    Route::get('book-edit/{slug}', [BookController::class, 'edit']);
 
-    // Categories
+    //* Categories
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('category-add', [CategoryController::class, 'add']);
     Route::post('category-add', [CategoryController::class, 'store']);
@@ -56,4 +60,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('users', [UserController::class, 'index']);
 
     Route::get('rent-logs', [RentLogController::class, 'index']);
+    //* User
+    Route::get('users', [UserController::class, 'index']);
+    Route::get('user-add', [UserController::class, 'add']);
+    Route::post('user-add', [UserController::class, 'store']);
+    Route::get('user-edit/{slug}', [UserController::class, 'edit']);
 });
